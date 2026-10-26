@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Muhammad Shafeeq — Software Developer</title>
+<meta name="description" content="Portfolio of Muhammad Shafeeq, a Software Developer. Selected work: Wellspace, Slatefront AI, MaxFit, Musketeer, a Brawl Stars Discord bot and SafrDubai.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✺</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f6efe2; --ink:#2a1a12; --muted:#6d5a4d; --red:#e63312; --orange:#ff8a1f; --panel:#fffaf0; --line:#2a1a1233;
+  --r:28px; --ease:cubic-bezier(.2,.8,.2,1); --t:.5s;
+  --display:"Bricolage Grotesque",system-ui,sans-serif; --mono:"DM Mono",ui-monospace,monospace;
+  box-sizing:border-box; padding-top:env(safe-area-inset-top,0px); padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1d130d;--ink:#f6efe2;--muted:#c2ad9c;--panel:#2a1c14;--line:#f6efe233;--red:#ff5a3a}}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--display);overflow-x:hidden;line-height:1.5}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red);outline-offset:3px;border-radius:8px}
+.mono{font-family:var(--mono);font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+.wrap{max-width:1280px;margin:0 auto;padding:0 clamp(18px,4vw,48px)}
+section{padding:clamp(70px,12vw,150px) 0}
+.sr{position:absolute;left:-9999px}
+/* intro */
+#intro{position:fixed;inset:0;z-index:100;background:var(--red);color:#fff6e8;display:grid;place-items:center;text-align:center;transition:transform .8s var(--ease)}
+#intro.done{transform:translateY(-100%);pointer-events:none}
+#intro h2{margin:0;font-size:clamp(2.4rem,9vw,7rem);line-height:.95;font-weight:800;letter-spacing:-.04em;overflow:hidden}
+#intro h2 span{display:block;animation:up .9s var(--ease) both}
+#intro h2 span:nth-child(2){animation-delay:.12s;color:#ffd7a3}
+#intro button{position:absolute;bottom:28px;right:28px;background:none;border:1.5px solid currentColor;color:inherit;border-radius:99px;padding:10px 18px;cursor:pointer;font:inherit}
+@keyframes up{from{transform:translateY(110%)}to{transform:none}}
+/* nav */
+nav{position:fixed;top:calc(14px + env(safe-area-inset-top,0px));left:50%;transform:translateX(-50%);z-index:50;display:flex;gap:4px;padding:6px;border-radius:99px;background:color-mix(in srgb,var(--panel) 88%,transparent);border:1.5px solid var(--ink);backdrop-filter:blur(8px)}
+nav a{text-decoration:none;padding:9px clamp(14px,3vw,24px);border-radius:99px;font-weight:700;transition:background .3s,color .3s,transform .3s var(--ease)}
+nav a:hover{transform:translateY(-2px);background:var(--orange);color:#2a1a12}
+nav a.on{background:var(--ink);color:var(--bg)}
+/* hero */
+#top{min-height:100svh;display:flex;align-items:center;position:relative;padding-top:120px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.4fr .9fr;gap:20px;align-items:center}
+.tag{display:inline-block;border:1.5px solid var(--ink);border-radius:99px;padding:6px 14px;margin-bottom:22px}
+h1{margin:0;line-height:.88;letter-spacing:-.05em;font-weight:800}
+h1 .name{display:block;font-size:clamp(3.2rem,11.5vw,10rem);color:var(--red)}
+h1 .name em{font-style:normal;display:block;margin-left:clamp(0px,6vw,90px);color:var(--ink)}
+.headline{font-size:clamp(1.5rem,3.6vw,3rem);letter-spacing:-.03em;line-height:1.05;margin:28px 0 0;max-width:15em;font-weight:800}
+.headline .l{display:block;overflow:hidden}.headline .l>span{display:inline-block;transform:translateY(110%);transition:transform .9s var(--ease)}
+.go .headline .l>span{transform:none}
+.headline .l:nth-child(2)>span{transition-delay:.1s}.headline .l:nth-child(3)>span{transition-delay:.2s}
+.headline b{color:var(--orange);font-weight:800}
+.cta{display:flex;flex-wrap:wrap;gap:14px;margin-top:34px;align-items:center}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:16px 28px;border-radius:99px;background:var(--red);color:#fff6e8;text-decoration:none;font-weight:800;border:2px solid var(--red);cursor:pointer;font:inherit;font-weight:800;transition:transform .3s var(--ease),background .3s}
+.btn:hover{transform:translateY(-3px) rotate(-1deg)}
+.btn.ghost{background:transparent;color:var(--ink);border-color:var(--ink)}
+.art{width:100%;max-width:460px;justify-self:center;aspect-ratio:1}
+.art svg{width:100%;height:100%;overflow:visible}
+.spin{transform-origin:200px 200px;animation:spin 40s linear infinite}
+.spin.r{animation-duration:26s;animation-direction:reverse}
+@keyframes spin{to{transform:rotate(360deg)}}
+.bob{animation:bob 4s ease-in-out infinite}
+@keyframes bob{50%{transform:translateY(-14px)}}
+.dot{position:absolute;border-radius:50%;pointer-events:none;will-change:transform}
+/* work */
+.sec-h{font-size:clamp(3rem,10vw,9rem);letter-spacing:-.05em;line-height:.9;margin:0 0 clamp(36px,6vw,80px);font-weight:800}
+.sec-h small{font-family:var(--mono);font-size:.9rem;letter-spacing:.08em;color:var(--red);vertical-align:top;margin-left:10px}
+.proj{position:relative;display:grid;grid-template-columns:1fr 1fr;min-height:min(560px,80vh);border-radius:var(--r);overflow:hidden;margin-bottom:28px;border:2px solid var(--ink);background:var(--pc);color:var(--pt);isolation:isolate;transform:translateY(40px);opacity:0;transition:transform 1s var(--ease),opacity 1s var(--ease),box-shadow .4s}
+.proj.in{transform:none;opacity:1}
+.proj:nth-of-type(even){margin-left:clamp(0px,6vw,100px)}
+.proj:nth-of-type(odd){margin-right:clamp(0px,6vw,100px)}
+.proj:hover{box-shadow:12px 12px 0 var(--ink)}
+.p-info{padding:clamp(24px,4vw,52px);display:flex;flex-direction:column;justify-content:space-between;gap:24px;z-index:2}
+.p-num{font-size:clamp(4rem,10vw,8rem);font-weight:800;line-height:.8;letter-spacing:-.06em;opacity:.9}
+.p-info h3{margin:0 0 8px;font-size:clamp(2rem,4.4vw,3.6rem);letter-spacing:-.04em;line-height:.95}
+.p-info p{margin:0;max-width:28em}
+.p-acts{display:flex;gap:10px;flex-wrap:wrap}
+.pbtn{padding:12px 20px;border-radius:99px;border:2px solid currentColor;background:transparent;color:inherit;font:inherit;font-weight:800;cursor:pointer;text-decoration:none;transition:background .3s,color .3s,transform .3s var(--ease)}
+.pbtn.fill{background:var(--pt);color:var(--pc);border-color:var(--pt)}
+.pbtn:hover{transform:translateY(-2px) scale(1.03)}
+.p-viz{position:relative;overflow:hidden;min-height:300px;display:grid;place-items:center;background:var(--pv)}
+.p-viz>*{transition:transform .8s var(--ease)}
+.proj:hover .p-viz>*,.proj:focus-within .p-viz>*{transform:scale(1.07) rotate(-2deg)}
+.hint{position:absolute;left:0;right:0;bottom:0;padding:14px 22px;background:var(--pt);color:var(--pc);transform:translateY(101%);transition:transform .5s var(--ease);z-index:3}
+.proj:hover .hint,.proj:focus-within .hint{transform:none}
+/* viz bits */
+.v{width:80%;max-width:360px}
+.win{background:#fff;border-radius:14px;border:2px solid #111;box-shadow:6px 6px 0 #111;padding:14px;color:#111}
+.win i{display:block;height:10px;border-radius:5px;background:#0002;margin:8px 0}
+.win .bar{height:60px;border-radius:10px;margin-top:10px}
+/* dialog */
+dialog{border:2px solid var(--ink);border-radius:var(--r);padding:0;width:min(720px,94vw);max-height:90svh;background:var(--panel);color:var(--ink);overflow:auto;opacity:0;transform:translateY(30px) scale(.97);transition:opacity .4s var(--ease),transform .4s var(--ease),overlay .4s allow-discrete,display .4s allow-discrete}
+dialog[open]{opacity:1;transform:none}
+@starting-style{dialog[open]{opacity:0;transform:translateY(30px) scale(.97)}}
+dialog::backdrop{background:#2a1a12bb}
+.d-in{padding:clamp(22px,4vw,44px)}
+.d-in h3{font-size:clamp(2rem,5vw,3.4rem);letter-spacing:-.04em;line-height:1;margin:6px 0 16px}
+.d-in dl{display:grid;grid-template-columns:auto 1fr;gap:10px 20px;margin:24px 0}
+.d-in dt{color:var(--red)}.d-in dd{margin:0}
+.x{position:absolute;top:14px;right:14px;width:44px;height:44px;border-radius:50%;border:2px solid var(--ink);background:var(--bg);color:var(--ink);font-size:1.3rem;cursor:pointer}
+body.lock{overflow:hidden}
+/* about */
+#about p{font-size:clamp(1.4rem,3.2vw,2.6rem);letter-spacing:-.025em;line-height:1.2;max-width:22em;margin:0;font-weight:800}
+#about mark{background:var(--orange);color:#2a1a12;padding:0 .2em;border-radius:.2em}
+.rev{opacity:0;transform:translateY(34px);transition:opacity .9s var(--ease),transform .9s var(--ease)}.rev.in{opacity:1;transform:none}
+/* contact */
+#contact{background:var(--red);color:#fff6e8;border-radius:var(--r) var(--r) 0 0;overflow:hidden}
+#contact h2{font-size:clamp(3rem,12vw,11rem);letter-spacing:-.06em;line-height:.85;margin:0 0 30px;font-weight:800}
+#contact h2 span{color:#ffd7a3;display:inline-block;transition:transform .4s var(--ease)}
+#contact h2 span:hover{transform:rotate(-6deg) scale(1.08)}
+#contact p{font-size:1.25rem;max-width:30em}
+.clinks{display:flex;flex-wrap:wrap;gap:14px;margin-top:28px}
+#contact .btn{background:#fff6e8;color:#2a1a12;border-color:#fff6e8}
+#contact .btn.ghost{background:transparent;color:#fff6e8}
+#toast{min-height:1.5em;margin-top:14px;font-family:var(--mono)}
+/* footer */
+footer{background:var(--ink);color:var(--bg);padding:34px 0 calc(34px + env(safe-area-inset-bottom,0px))}
+.f{display:flex;flex-wrap:wrap;gap:18px;justify-content:space-between;align-items:center}
+.f a{margin-right:16px}
+#smile{background:none;border:0;font-size:2.4rem;cursor:pointer;color:var(--orange);transition:transform .6s var(--ease)}
+#smile:hover{transform:rotate(180deg) scale(1.2)}
+#smile.pop{animation:pop .6s var(--ease)}
+@keyframes pop{50%{transform:scale(1.8) rotate(200deg)}}
+/* cursor */
+#cur{position:fixed;left:0;top:0;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:var(--orange);mix-blend-mode:multiply;pointer-events:none;z-index:200;display:none;transition:width .25s,height .25s,margin .25s,background .25s}
+#cur.big{width:64px;height:64px;margin:-32px 0 0 -32px;background:var(--red);opacity:.85}
+@media (hover:hover) and (pointer:fine){.cur-on #cur{display:block}}
+@media (max-width:820px){
+  .hero-grid,.proj{grid-template-columns:1fr}
+  .proj{margin-left:0!important;margin-right:0!important}
+  .p-viz{min-height:240px;order:-1}
+  .hint{display:none}.art{max-width:300px}
+  .d-in dl{grid-template-columns:1fr}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  .proj,.rev{opacity:1;transform:none}.headline .l>span{transform:none}#intro{display:none}
+}
+</style>
+</head>
+<body>
+
+<script>
+const CONFIG={email:"muhammadshafeeq1595@gmail.com",linkedin:"https://www.linkedin.com/in/muhammad-shafeeq-003357191/",closing:""};
+</script>
+
+<div id="intro" role="dialog" aria-label="Intro">
+  <h2><span>Muhammad</span><span>Shafeeq</span></h2>
+  <button id="skip">Skip →</button>
+</div>
+
+<nav aria-label="Primary">
+  <a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a>
+</nav>
+
+
+<main>
+<section id="top" aria-labelledby="h1">
+
+  <div class="wrap hero-grid">
+    <div>
+      <span class="tag mono">Software Developer</span>
+      <h1 id="h1"><span class="name">Muhammad<em>Shafeeq</em></span>
+        <span class="headline" aria-label="I build things that make people go, ‘wait, that’s cool.’">
+          <span class="l" aria-hidden="true"><span>I build things</span></span>
+          <span class="l" aria-hidden="true"><span>that make people go,</span></span>
+          <span class="l" aria-hidden="true"><span><b>‘wait, that’s cool.’</b></span></span>
+        </span>
+      </h1>
+      <div class="cta"><a class="btn" href="#work">See the work ↓</a><a class="btn ghost" href="#contact">Contact</a></div>
+    </div>
+    <div class="art" aria-hidden="true">
+      <svg viewBox="0 0 400 400">
+        <circle cx="200" cy="200" r="180" fill="var(--orange)"/>
+        <g class="spin"><circle cx="200" cy="200" r="150" fill="none" stroke="var(--ink)" stroke-width="3" stroke-dasharray="4 14" stroke-linecap="round"/><circle cx="350" cy="200" r="16" fill="var(--red)"/></g>
+        <g class="spin r"><circle cx="200" cy="200" r="105" fill="none" stroke="var(--bg)" stroke-width="3"/><rect x="88" y="188" width="24" height="24" fill="var(--ink)" rx="4"/></g>
+        <g class="bob"><rect x="130" y="150" width="140" height="100" rx="18" fill="var(--bg)" stroke="var(--ink)" stroke-width="4"/>
+        <path d="M168 182l-22 18 22 18M232 182l22 18-22 18" fill="none" stroke="var(--red)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/><path d="M212 176l-24 48" stroke="var(--ink)" stroke-width="7" stroke-linecap="round"/></g>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<section id="work" aria-labelledby="work-h"><div class="wrap">
+  <h2 class="sec-h rev" id="work-h">Work<small>06 projects</small></h2>
+  <div id="projects"></div>
+</div></section>
+
+<section id="about" aria-labelledby="about-h"><div class="wrap">
+  <h2 class="sec-h rev" id="about-h">About</h2>
+  <p class="rev" id="about-text" style="font-family: 'Montserrat', sans-serif; font-weight: 200; font-optical-sizing: auto; font-style: normal;">I'm a software developer who enjoys turning ideas into things people can actually use. From web applications and interactive experiences to Python automation and Discord bots, I like exploring different technologies and finding creative solutions to interesting problems. I'm always experimenting, learning something new, and working on projects that challenge me to think differently. ”</p>
+</div></section>
+
+<section id="contact" aria-labelledby="contact-h"><div class="wrap">
+  <h2 id="contact-h">Got <span>some</span><span>thing</span> interesting?</h2>
+  <p id="closing"></p>
+  <div class="clinks">
+    <a class="btn" id="mail">Email me</a>
+    <a class="btn ghost" id="li" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
+    <button class="btn ghost" id="copy" type="button">Copy email</button>
+  </div>
+  <div id="toast" role="status" aria-live="polite"></div>
+</div></section>
+</main>
+
+<footer><div class="wrap f">
+  <div><strong>Muhammad Shafeeq</strong><br><span class="mono">© <span id="yr"></span> · Built with caffeine</span></div>
+  <div><a id="fmail" href="#">Email</a><a id="fli" target="_blank" rel="noopener noreferrer">LinkedIn</a></div>
+</div></footer>
+
+<dialog id="dlg" aria-labelledby="d-title"><button class="x" id="dclose" aria-label="Close details">✕</button><div class="d-in" id="dbody"></div></dialog>
+
+<script>
+const TBD="Node.js, React, Django";
+const PROJECTS=[
+ {n:"01",name:"Wellspace",cat:"Live Product",url:"https://wellspace.ampierelabs.com/",label:"Visit Website",pc:"#e8f3ef",pt:"#12342b",pv:"#cfe7de",viz:"well",
+  desc:"A digital product from the AmpiereLabs team, built around creating a more engaging online experience.",over:"Wellspace is a platform focused on promoting mental health and overall well-being by providing resources and support to help people manage stress, improve their emotional health, and maintain a healthy work-life balance. It encourages individuals to prioritize self-care, build positive habits, and create a supportive environment where everyone can feel comfortable and thrive.",role:"Co-Founder, Full-Stack Developer & DevOps",tech:TBD},
+ {n:"02",name:"Slatefront AI",cat:"AI Learning Product",url:"https://slatefront.app/",label:"Visit Website",pc:"#1d2a4d",pt:"#fff6e8",pv:"#2b3d70",viz:"slate",
+  desc:"An AI-assisted learning product built around explaining ideas visually.",over:"Slatefront AI is a learning product from the AmpiereLabs team designed to make complex ideas easier to understand through animation. It explores how AI can transform questions, images, and sketches into visual explanations that help concepts click. The project brings together AI and interactive learning to make understanding feel more intuitive.",role:"Backend Developer & DevOps",tech:TBD},
+ {n:"03",name:"MaxFit",cat:"Freelance Website",url:"https://www.maxfitgym.ae/",label:"Visit Website",pc:"#ffd400",pt:"#111",pv:"#111",viz:"fit",
+  desc:"Freelance website work for a gym in the UAE.",over:"Freelance website work for a gym. This work was done 3 years ago and has occured a lot of changes since which I am not involved with. As of 26th, the header, gallery and footer are still mine.",role:"Web Designer & Frontend Development",tech:"Node.js, React"},
+ {n:"04",name:"Musketeer",cat:"Freelance Ecommerce",url:"https://musketeerleather.com/",label:"Visit Website",pc:"#4a2c1a",pt:"#f4e3cc",pv:"#7a4a2a",viz:"leather",
+  desc:"Freelance ecommerce and web work for a leather-goods brand.",over:"Musketeer is a platform or initiative that represents teamwork, courage, loyalty, and unity. Inspired by the motto “All for one and one for all,” it encourages people to work together, support one another, and overcome challenges as a team. Musketeer promotes leadership, responsibility, and collaboration, helping individuals build strong relationships and achieve shared goals. NOTE: I did not make this website, but i did continue managing it once the original developer left the project. ",role:"DevOps & Error Management",tech:"Django, Jinja2, Python"},
+ {n:"05",name:"Brawl Stars Discord Bot",cat:"Software Project",url:"https://github.com/MuhammadShafeeq/Brawl-Stars-Discord-Bot",label:"View GitHub",pc:"#14161f",pt:"#e9ecff",pv:"#1f2340",viz:"bot",
+  desc:"A Discord bot that retrieves Brawl Stars game information. No longer active on Discord; the repository is the destination.",over:"A Discord bot for looking up Brawl Stars game data. The bot is no longer running, so see the repository for the code and README.",role:"Sole Developer",tech:"Discord.py, Python, JSON"},
+ {n:"06",name:"SafrDubai",cat:"Software Project",url:"https://github.com/MuhammadShafeeq/safrdubai",label:"View GitHub",pc:"#f0e6d2",pt:"#2a1a12",pv:"#e4d4b4",viz:"map",
+  desc:"A Dubai public transport route and cost calculator. Not currently live; the repository is the destination.",over:"A route and cost calculator for Dubai public transport. It isn’t running as a live service, so see the repository for the code.",role:"Backend Developer",tech:"Javascript, Flask, Python"}
+];
+const VIZ={
+ well:'<svg class="v" viewBox="0 0 300 220"><rect width="300" height="220" rx="16" fill="#fff" stroke="#12342b" stroke-width="3"/><circle cx="60" cy="60" r="28" fill="#7cc4a8"/><rect x="108" y="44" width="150" height="14" rx="7" fill="#12342b"/><rect x="108" y="70" width="100" height="10" rx="5" fill="#12342b55"/><rect x="30" y="118" width="110" height="70" rx="12" fill="#cfe7de"/><rect x="160" y="118" width="110" height="70" rx="12" fill="#ffd7a3"/></svg>',
+ slate:'<svg class="v" viewBox="0 0 300 220"><rect x="10" y="20" width="130" height="80" rx="12" fill="#fff6e8"/><text x="30" y="68" font-size="30" font-family="serif" fill="#1d2a4d">y = x²</text><path d="M145 60h30" stroke="#ff8a1f" stroke-width="5" stroke-dasharray="2 9" stroke-linecap="round"/><path d="M168 48l16 12-16 12" fill="none" stroke="#ff8a1f" stroke-width="5" stroke-linecap="round"/><rect x="190" y="20" width="100" height="80" rx="12" fill="#fff6e8"/><path d="M200 90Q240 -10 280 90" fill="none" stroke="#e63312" stroke-width="5"/><circle cx="240" cy="55" r="7" fill="#ff8a1f"><animateMotion dur="3s" repeatCount="indefinite" path="M-40 35Q0 -65 40 35"/></circle><rect x="40" y="130" width="220" height="14" rx="7" fill="#fff6e855"/><rect x="40" y="156" width="150" height="14" rx="7" fill="#fff6e855"/></svg>',
+ fit:'<svg class="v" viewBox="0 0 300 220"><text x="150" y="105" text-anchor="middle" font-size="96" font-weight="800" fill="#ffd400" font-family="Bricolage Grotesque,sans-serif" letter-spacing="-5">MAX</text><text x="150" y="190" text-anchor="middle" font-size="96" font-weight="800" fill="none" stroke="#ffd400" stroke-width="2" font-family="Bricolage Grotesque,sans-serif" letter-spacing="-5">FIT</text><g fill="#e63312"><rect x="20" y="104" width="12" height="40" rx="3"/><rect x="268" y="104" width="12" height="40" rx="3"/><rect x="36" y="118" width="228" height="12"/></g></svg>',
+ leather:'<svg class="v" viewBox="0 0 300 220"><rect x="30" y="40" width="240" height="150" rx="22" fill="#a8683a" stroke="#2a1a12" stroke-width="3"/><rect x="42" y="52" width="216" height="126" rx="14" fill="none" stroke="#f4e3cc" stroke-width="2.5" stroke-dasharray="7 6"/><path d="M30 90h240" stroke="#2a1a12" stroke-width="3"/><circle cx="150" cy="116" r="12" fill="#e0b25a" stroke="#2a1a12" stroke-width="3"/></svg>',
+ bot:'<svg class="v" viewBox="0 0 300 220"><rect x="20" y="20" width="260" height="180" rx="14" fill="#14161f" stroke="#7a86ff" stroke-width="2"/><text x="36" y="56" font-family="DM Mono,monospace" font-size="14" fill="#7a86ff">/brawler</text><rect x="36" y="76" width="228" height="56" rx="10" fill="#2b3160"/><rect x="48" y="88" width="32" height="32" rx="8" fill="#ffd400"/><rect x="92" y="90" width="110" height="9" rx="4" fill="#e9ecff"/><rect x="92" y="108" width="70" height="9" rx="4" fill="#e9ecff66"/><rect x="36" y="146" width="150" height="9" rx="4" fill="#e9ecff33"/><circle cx="260" cy="170" r="6" fill="#e63312"/></svg>',
+ map:'<svg class="v" viewBox="0 0 300 220"><path d="M20 180C80 180 70 90 130 90S190 150 240 60" fill="none" stroke="#e63312" stroke-width="8" stroke-linecap="round" stroke-dasharray="1 16" /><path d="M20 180C80 180 70 90 130 90S190 150 240 60" fill="none" stroke="#2a1a12" stroke-width="3" stroke-linecap="round" stroke-dasharray="14 10"><animate attributeName="stroke-dashoffset" from="48" to="0" dur="2s" repeatCount="indefinite"/></path><circle cx="20" cy="180" r="12" fill="#ff8a1f" stroke="#2a1a12" stroke-width="3"/><circle cx="130" cy="90" r="9" fill="#f0e6d2" stroke="#2a1a12" stroke-width="3"/><path d="M240 25a22 22 0 0 1 22 22c0 18-22 36-22 36S218 65 218 47a22 22 0 0 1 22-22z" fill="#e63312" stroke="#2a1a12" stroke-width="3"/><circle cx="240" cy="47" r="7" fill="#f0e6d2"/></svg>'
+};
+const $=s=>document.querySelector(s);
+/* config */
+$("#mail").href=$("#fmail").href="mailto:"+CONFIG.email;
+$("#li").href=$("#fli").href=CONFIG.linkedin;
+$("#closing").textContent=CONFIG.closing;
+$("#yr").textContent=new Date().getFullYear();
+/* projects */
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+$("#projects").innerHTML=PROJECTS.map((p,i)=>`
+<article class="proj" style="--pc:${p.pc};--pt:${p.pt};--pv:${p.pv}" aria-labelledby="pt${i}">
+ <div class="p-info"><div><span class="p-num">${p.n}</span></div>
+  <div><span class="mono">${esc(p.cat)}</span><h3 id="pt${i}">${esc(p.name)}</h3><p>${esc(p.desc)}</p></div>
+  <div class="p-acts"><button class="pbtn fill" data-i="${i}" type="button" aria-haspopup="dialog">Details</button>
+  <a class="pbtn" href="${p.url}" target="_blank" rel="noopener noreferrer">${p.label} ↗<span class="sr"> (opens in new tab)</span></a></div></div>
+ <div class="p-viz" aria-hidden="true">${VIZ[p.viz]}</div>
+</article>`).join("");
+/* modal */
+const dlg=$("#dlg");let opener=null;
+function openD(i,btn){const p=PROJECTS[i];opener=btn;
+ $("#dbody").innerHTML=`<span class="mono">${p.n} · ${esc(p.cat)}</span><h3 id="d-title">${esc(p.name)}</h3><p>${esc(p.over)}</p>
+ <dl><dt class="mono">Role</dt><dd>${esc(p.role)}</dd><dt class="mono">Tech</dt><dd>${esc(p.tech)}</dd></dl>
+ <a class="btn" href="${p.url}" target="_blank" rel="noopener noreferrer">${p.label} ↗</a>`;
+ dlg.setAttribute("aria-labelledby","d-title");dlg.showModal();document.body.classList.add("lock");$("#dclose").focus();}
+function closeD(){dlg.close();}
+dlg.addEventListener("close",()=>{document.body.classList.remove("lock");opener&&opener.focus()});
+dlg.addEventListener("click",e=>{if(e.target===dlg)closeD()});
+$("#dclose").onclick=closeD;
+$("#projects").addEventListener("click",e=>{const b=e.target.closest("button[data-i]");if(b)openD(+b.dataset.i,b)});
+/* reveals + active nav */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");io.unobserve(e.target)}}),{threshold:.12});
+document.querySelectorAll(".proj,.rev").forEach(el=>io.observe(el));
+const links=[...document.querySelectorAll("nav a")];
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)links.forEach(a=>a.classList.toggle("on",a.hash==="#"+e.target.id))}),{rootMargin:"-45% 0px -50% 0px"});
+["work","about","contact"].forEach(id=>so.observe($("#"+id)));
+/* intro */
+function endIntro(){$("#intro").classList.add("done");document.body.classList.add("go");$("#top").classList.add("go");setTimeout(()=>$("#intro").remove(),900)}
+$("#skip").onclick=endIntro;
+addEventListener("keydown",e=>{if(e.key==="Escape"&&$("#intro"))endIntro()});
+setTimeout(()=>$("#intro")&&endIntro(),1900);
+$("#skip").focus({preventScroll:true});
+/* copy email */
+$("#copy").onclick=async()=>{const t=$("#toast");
+ try{await navigator.clipboard.writeText(CONFIG.email);t.textContent="Copied ✓ "+CONFIG.email}
+ catch{const ta=document.createElement("textarea");ta.value=CONFIG.email;document.body.append(ta);ta.select();
+  let ok=false;try{ok=document.execCommand("copy")}catch{}ta.remove();
+  t.textContent=ok?"Copied ✓ "+CONFIG.email:"Copy didn’t work. Email: "+CONFIG.email}
+ setTimeout(()=>t.textContent="",3500)};
+$("#smile").onclick=e=>{e.target.classList.remove("pop");void e.target.offsetWidth;e.target.classList.add("pop")};
+/* pointer effects: cursor + hero dots (no React, rAF only) */
+const fine=matchMedia("(hover:hover) and (pointer:fine)").matches,calm=matchMedia("(prefers-reduced-motion:reduce)").matches;
+if(fine){document.body.classList.add("cur-on");const c=$("#cur");let x=0,y=0,tx=0,ty=0,mx=0,my=0,raf=0;
+ const loop=()=>{x+=(tx-x)*.25;y+=(ty-y)*.25;c.style.transform=`translate(${x}px,${y}px)`;
+  if(!calm)[["#d1",.04],["#d2",-.06],["#d3",.03]].forEach(([s,k])=>{$(s).style.transform=`translate(${mx*k*100}px,${my*k*100}px)`});
+  raf=requestAnimationFrame(loop)};
+ addEventListener("pointermove",e=>{tx=e.clientX;ty=e.clientY;mx=e.clientX/innerWidth-.5;my=e.clientY/innerHeight-.5});
+ document.addEventListener("visibilitychange",()=>{cancelAnimationFrame(raf);if(!document.hidden)loop()});
+ document.addEventListener("pointerover",e=>c.classList.toggle("big",!!e.target.closest(".proj,a,button")));
+ loop();}
+</script>
+</body>
+</html>
